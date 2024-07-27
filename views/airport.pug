@@ -1,0 +1,33 @@
+extends layout
+
+block content
+  .container
+    header.header
+      h1 Airport Information
+    .search-box
+      form(action='/airport', method='get', id='airport-form')
+        input(type='text', name='iata', id='iata-input', placeholder='Enter IATA code or city or airport name', list='iata-suggestions')
+        button(type='submit') Get Airport Info
+      datalist#iata-suggestions
+    if airport
+      .airport-details
+        p IATA Code: #{airport.iata}
+        p Airport Name: #{airport.name}
+        p City: #{airport.city}
+        p Country: #{airport.country}
+        p Temperature: #{airport.weather.temperature} °C
+        p Weather: #{airport.weather.description}
+        p Wind Speed: #{airport.weather.wind_speed} m/s
+        p Visibility: #{airport.weather.visibility} meters
+        p Humidity: #{airport.weather.humidity}%
+    else if error
+      .error
+        p #{error}
+    else
+      .error
+        p No airport information available
+    .back-button
+        a(href='/') Back to Home
+
+  script(src='https://code.jquery.com/jquery-3.7.1.min.js')
+  script(src='/javascripts/airport.js')

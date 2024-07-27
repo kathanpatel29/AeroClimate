@@ -1,0 +1,16 @@
+{
+  "name": "aeroclimate",
+  "version": "1.0.0",
+  "description": "AeroClimate using OpenWeatherMap and OpenSky APIs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "init": "^0.1.2",
+    "node-fetch": "^2.6.1",
+    "pug": "^3.0.3"
+  }
+}

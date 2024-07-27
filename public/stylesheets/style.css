@@ -1,0 +1,241 @@
+body {
+    font-family: 'Airbnb Cereal App Light', sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+    color: #484848;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    margin: 20px;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    flex: 1;
+    margin: 10px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.8s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    height: 60vh;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #000000;
+    box-shadow: 0 2px 4px rgb(255, 255, 255);
+}
+
+.logo-text {
+    font-size: 2rem;
+    color: #ff5a5f;
+    font-weight: bold;
+    font-family: 'Airbnb Cereal App Bold', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+h1 {
+    color: #ff5a5f;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+.weather-details p,
+.airport-details p {
+    display: flex;
+    align-items: center;
+}
+
+.weather-details i,
+.airport-details i {
+    margin-left: 10px;
+    font-size: 1.5rem;
+    animation: fadeIn 1.2s ease-in-out infinite alternate;
+}
+
+form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+}
+.search-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+input[type="text"] {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #ff5a5f;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    background-color: #ff5a5f;
+    color: #fff;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #e04e50;
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(1);
+}
+
+.weather-details,
+.airport-details {
+    margin-top: 20px;
+}
+
+.weather-details p,
+.airport-details p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.iata-list-link {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.iata-list-link p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.iata-list-link a {
+    color: #ff5a5f;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.iata-list-link a:hover {
+    color: #e04e50;
+}
+
+.back-button a {
+    text-decoration: none;
+    color: #fff;
+    background-color: #ff5a5f;
+    padding: 10px 20px;
+    border-radius: 4px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.back-button a:hover {
+    background-color: #e04e50;
+    transform: scale(1.05);
+}
+
+.back-button a:active {
+    transform: scale(1);
+}
+
+footer {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #888;
+    background-color: #000000;
+    padding: 10px 0;
+    box-shadow: 0 -2px 4px rgba(255, 255, 255, 255);
+    width: 100%;
+    flex-shrink: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    input[type="text"] {
+        width: 60%;
+    }
+
+    button {
+        padding: 8px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+}

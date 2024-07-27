@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  .container
+    header.header
+      h1 Weather Information
+    .search-box
+      form(action='/weather', method='get')
+        input(type='text', name='city', placeholder='Enter city')
+        button(type='submit') Get Weather
+    if weather
+      .weather-details
+        p City: #{weather.name}
+        p Temperature: #{(weather.main.temp - 273.15).toFixed(2)} °C
+        p Weather: #{weather.weather[0].description}
+        p Wind Speed: #{weather.wind.speed} m/s
+        p Visibility: #{weather.visibility} meters
+        p Humidity: #{weather.main.humidity}%
+    else if error
+      .error
+        p #{error}
+    else
+      .error
+        p No weather information available
+    .back-button
+      a(href='/')  Back to Home
